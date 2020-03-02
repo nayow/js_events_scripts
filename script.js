@@ -50,7 +50,6 @@ headerEl2.addEventListener("dblclick", onHeaderClick);
 //////////////////////  6  //////////////////////
 
 let cards = document.querySelectorAll(".container .card");
-
 for(let i=0; i<document.querySelectorAll(".container .card").length; i++){
   let viewBtn = cards[i].getElementsByClassName("btn")[0];
   let cardTxt = cards[i].getElementsByClassName("card-text")[0];
@@ -72,7 +71,10 @@ for(let i=0; i<document.querySelectorAll(".container .card").length; i++){
 let rightArrow = document.querySelectorAll(".jumbotron .btn-secondary")[0];
 let cardsParent = document.querySelectorAll(".container .row .col-md-4")[0].parentNode;
 function onRightArrowClick(){
-  cardsParent.insertBefore(cardsParent.getElementsByClassName("col-md-4")[5], cardsParent.getElementsByClassName("col-md-4")[0]);
+  cardsParent.insertBefore(
+    cardsParent.getElementsByClassName("col-md-4")[5],
+    cardsParent.getElementsByClassName("col-md-4")[0]
+  );
 };
 rightArrow.addEventListener("click", onRightArrowClick);
 
@@ -81,7 +83,10 @@ rightArrow.addEventListener("click", onRightArrowClick);
 let leftArrow = document.querySelectorAll(".jumbotron .btn-primary")[0];
 function onLeftArrowClick(e){
   e.preventDefault();
-  cardsParent.insertBefore(cardsParent.getElementsByClassName("col-md-4")[0], cardsParent.getElementsByClassName("col-md-4")[5].nextSibling);
+  cardsParent.insertBefore(
+    cardsParent.getElementsByClassName("col-md-4")[0],
+    cardsParent.getElementsByClassName("col-md-4")[5].nextSibling
+  );
 };
 leftArrow.addEventListener("click", onLeftArrowClick);
 
